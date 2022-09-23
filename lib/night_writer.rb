@@ -1,7 +1,7 @@
 message = File.open(ARGV[0], "r")
 incoming_message = message.read
 message.close
-lines = File.readlines(ARGV[0])
+lines = File.readlines(ARGV[1])
 line_count = lines.size
 text = lines.join
 total_characters = text.length
