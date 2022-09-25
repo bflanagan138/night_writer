@@ -49,10 +49,10 @@ RSpec.describe Converter do
           expect(converter_2.word_to_braille).to eq "0.0.0.0...0.0.\n00..00....00..\n.............."
      end
 
-     it 'can convert sentences to a braille block' do
+     it 'can convert lowercase sentences to a braille block' do
           alphabet = BrailleAlphabet.new
 
-          converter_3 = Converter.new("Hello, how do you do?", alphabet)
-          expect(converter_3.word_to_braille).to eq ""
+          converter_3 = Converter.new("hello, how do you do?", alphabet)
+          expect(converter_3.word_to_braille).to eq "0.0.0.0.0.....0.0..0..000...000.0...000...\n00.00.0..00...00.000...0.0...0.0.....0.00.\n....0.0.0.......0..0....0...000.00....0.00"
      end
 end

@@ -11,7 +11,7 @@ require '../lib/braille_alphabet'
     braille_message = incoming_message
     writer = File.open(ARGV[1], "w")
     # require 'pry'; binding.pry
-    self.converter = Converter.new(braille_message, alphabet)
+    # self.converter = Converter.new(braille_message, alphabet)
     writer.write(braille_message)
 
     writer.close
