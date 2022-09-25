@@ -30,6 +30,6 @@ class Converter
         @word_to_braille
         eighty_char_limit = @message.scan(/.{1,40}/).join("\n")
         # end
-        binding.pry
+        # binding.pry
     end
 end
