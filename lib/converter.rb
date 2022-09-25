@@ -15,7 +15,6 @@ class Converter
     def word_to_braille
         braille_message_array = @message.split("").map do |character| 
             char_to_braille(character)
-        # binding.pry
         end
         message = ''
         3.times do |i|
@@ -25,5 +24,12 @@ class Converter
         message += "\n" unless i == 2
         end
         message 
+    end
+#WIP - breaking into 80 char lines
+    def line_length_limit
+        @word_to_braille
+        eighty_char_limit = @message.scan(/.{1,40}/).join("\n")
+        # end
+        binding.pry
     end
 end
