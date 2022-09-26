@@ -60,6 +60,6 @@ RSpec.describe Converter do
           alphabet = BrailleAlphabet.new
 
           converter_4 = Converter.new(":this sentence is forty characters long. so this is another sentence.", alphabet)
-          expect(converter_4.line_length_limit).to eq  ":this sentence is forty characters long.\n so this is another sentence."
+          expect(converter_4.line_length_limit).to eq ":this sentence is forty characters long.\n so this is another sentence."
      end
 end

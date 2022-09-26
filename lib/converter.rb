@@ -5,7 +5,6 @@ class Converter
     def initialize(message, braille_alphabet)
         @message = message
         @braille_alphabet = braille_alphabet
-        # binding.pry
     end
 
     def char_to_braille(character)
@@ -25,11 +24,9 @@ class Converter
         end
         message 
     end
-#WIP - breaking into 80 char lines
+
     def line_length_limit
-        @word_to_braille
         eighty_char_limit = @message.scan(/.{1,40}/).join("\n")
-        # end
-        # binding.pry
+        @message = eighty_char_limit if @message.size > 40
     end
 end
