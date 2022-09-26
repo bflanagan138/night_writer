@@ -1,18 +1,19 @@
-require '../lib/converter'
+require './lib/converter'
+require './lib/braille_alphabet'
 
-message = File.open(ARGV[0], "r")
-incoming_message = message.read
-lines = File.readlines(ARGV[0])
-line_count = lines.size
-characters = lines.join
-character_count = characters.length
+    message = File.open(ARGV[0], "r")
+    incoming_message = message.read
+    lines = File.readlines(ARGV[1])
+    characters = lines.join
+    character_count = characters.length
 
-braille_message = incoming_message
-writer = File.open(ARGV[1], "w")
-writer.write(braille_message)
+    writer = File.open(ARGV[1], "w")
+    alphabet = BrailleAlphabet.new
+    converter = Converter.new(incoming_message, alphabet)
+    converter.line_length_limit
+    braille_message = converter.word_to_braille
+    writer.write(braille_message)
 
-#call converter methods
-
-writer.close
-puts "Created 'braille.txt' containing 256 characters"
-puts "Created '#{(ARGV[1])}' containing '#{(character_count)}' characters"
+    writer.close
+    puts "Created 'braille.txt' containing 256 characters"
+    puts "Created '#{(ARGV[1])}' containing #{(character_count)} characters"
