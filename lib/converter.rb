@@ -27,6 +27,6 @@ class Converter
 
     def line_length_limit
         eighty_char_limit = @message.scan(/.{1,40}/).join("\n")
-        @message = eighty_char_limit if @message.size > 40
+        # @message = eighty_char_limit if @message.size > 40
     end
 end
