@@ -17,6 +17,6 @@ RSpec.describe BrailleToEnglish do
     it 'can return an english a' do
         braille_to_english= BrailleToEnglish.new()
     # binding.pry
-        expect(braille_to_english.braille_to_english_dictionary["0....."]).to eq ('a')
+        expect(braille_to_english.braille_to_english_dictionary['0.....']).to eq ('a')
     end
 end
