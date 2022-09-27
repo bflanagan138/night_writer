@@ -1,9 +1,10 @@
 require './lib/converter'
 require './lib/braille_alphabet'
+require 'pry'
 
     message = File.open(ARGV[0], "r")
     incoming_message = message.read
-    lines = File.readlines(ARGV[1])
+    lines = File.readlines(ARGV[0]) * 2
     characters = lines.join
     character_count = characters.length
 
